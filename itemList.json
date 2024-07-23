@@ -1,0 +1,36 @@
+{
+  "CHICKEN_BIRYANI": [
+    {
+      "iid": "1",
+      "iname": "onions",
+      "iqty": "5"
+    },
+    {
+      "iid": "2",
+      "iname": "chicken",
+      "iqty": "7"
+    },
+    {
+      "iid": "3",
+      "iname": "RICE",
+      "iqty": "10"
+    }
+  ],
+  "VEG_BIRYANI": [
+    {
+      "iid": "1",
+      "iname": "onions",
+      "iqty": "5"
+    },
+    {
+      "iid": "2",
+      "iname": "CARROT",
+      "iqty": "2"
+    },
+    {
+      "iid": "3",
+      "iname": "RICE",
+      "iqty": "3"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+[
+    {
+        "iid": 1,
+        "iname": "onion",
+        "iqty": "0",
+        "ides": ""
+       },
+       {
+        "iid": 2,
+        "iname": "sugar",
+        "iqty": "0",
+        "ides": ""
+       },
+       {
+        "iid": 3,
+        "iname": "oil",
+        "iqty": "0",
+        "ides": ""
+       },
+       {
+        "iid": 5,
+        "iname": "mirchi",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 6,
+        "iname": "chicken",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 7,
+        "iname": "fish",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 8,
+        "iname": "mutton",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 9,
+        "iname": "ghee",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 10,
+        "iname": "jeela",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 11,
+        "iname": "tomato",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 12,
+        "iname": "garlic",
+        "iqty": "",
+        "ides": ""
+       },
+       {
+        "iid": 13,
+        "iname": "potato",
+        "iqty": "",
+        "ides": ""
+       }
+    
+    
+    
+    
+    ]
