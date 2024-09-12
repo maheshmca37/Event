@@ -29,15 +29,15 @@
     margin-top: 20px;
 }
 .event-add {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 3px;
     background-color: #f0f0f0;
-    border-radius: 8px;
+    border-radius: 2px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#breakfast-btn,#lunch-btn,#snacks-btn,#dinner-btn{
+#breakfast-btn,#lunch-btn,#snacks-btn,#dinner-btn,#menu-final-btn{
     background: #001e4d;
     color: #fff;
     font-weight: 500;
@@ -51,13 +51,13 @@
 }
 
 .event-add h2 {
-    font-size: 24px;
+    font-size: 12px;
     margin-bottom: 20px;
 }
 
 .event-add form {
     display: grid;
-    gap: 7px;
+    gap: 2px;
 }
 
 .event-add label {
@@ -69,10 +69,10 @@
 .event-add input[type="number"],
 .event-add textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 2px;
+    font-size: 8px;
     box-sizing: border-box;
 }
 

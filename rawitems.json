@@ -1,0 +1,142 @@
+[
+    {
+        "id": "1",
+        "name": "Basmathi_Rice(Kg)",
+        "qty": "0"
+    },
+    {
+        "id": "2",
+        "name": "Chicken(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "3",
+        "name": "Allam(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "4",
+        "name": "Vellulli(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "5",
+        "name": "Oil(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "6",
+        "name": "Ghee(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "7",
+        "name": "Food_Color(No)",
+        "qty": "0"
+    },
+    {
+        "id": "8",
+        "name": "Kaju(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "9",
+        "name": "Dasin_Chekka(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "10",
+        "name": "Elachi(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "11",
+        "name": "Lavanga(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "12",
+        "name": "Pacchi_Sanaga_Pappu(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "13",
+        "name": "Chintha_Pandu(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "14",
+        "name": "pasupu(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "15",
+        "name": "Karam(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "16",
+        "name": "Kallupp(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "17",
+        "name": "Onion(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "18",
+        "name": "Dhaniyala_Podi(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "19",
+        "name": "ShaZeera(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "20",
+        "name": "Koothimeera(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "21",
+        "name": "Poodina(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "22",
+        "name": "Tomato(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "23",
+        "name": "Pacchi_Mirchi(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "24",
+        "name": "Vankaayalu(kg)",
+        "qty": "0"
+    },
+    {
+        "id": "25",
+        "name": "NimmaKaayalu(No)",
+        "qty": "0"
+    },
+    {
+        "id": "26",
+        "name": "Curd(ltrs)",
+        "qty": "0"
+    },
+    {
+        "id": "27",
+        "name": "Paalu(ltrs)",
+        "qty": "0"
+    },
+    {
+        "id": "28",
+        "name": "Mutton(kg)",
+        "qty": "0"
+    }
+]
