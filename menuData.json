@@ -3,43 +3,43 @@
       "veg-main": [
         {
           "name": "l_Veg_Biryani",
-          "image": "./bir1.jpg",
+          "image": "./img1.jpg",
           "peopleCount": 0
         },
         {
-          "name": "l_khatta",
-          "image": "./bir1.jpg",
+          "name": "l_Veg_Fried_Rice",
+          "image": "./img1.jpg",
           "peopleCount": 0
         },
         {
-          "name": "l_kachembry",
-          "image": "./bir1.jpg",
+          "name": "l_White_Rice",
+          "image": "./img1.jpg",
           "peopleCount": 0
         }
       ],
       "veg-curries": [
         {
           "name": "l_Potato_Fry",
-          "image": "./bir1.jpg",
+          "image": "./img1.jpg",
           "peopleCount": 0
         },
         {
-          "name": "l_vankay_fry",
-          "image": "./bir1.jpg",
+          "name": "l_Vankay_Fry",
+          "image": "./img1.jpg",
           "peopleCount": 0
         }
       ],
       "other-items": [
         {
-          "name": "l_gulab jam",
-          "image": "./bir1.jpg",
+          "name": "l_gulab_jam",
+          "image": "./img1.jpg",
           "peopleCount": 0
         }
       ],
       "icecreams": [
         {
           "name": "l_chocklate",
-          "image": "./bir1.jpg",
+          "image": "./img1.jpg",
           "peopleCount": 0
         }
       ],
@@ -55,7 +55,7 @@
       "tifins": [
         {
           "name": "b_Idly",
-          "image": "./bir1.jpg",
+          "image": "./img1.jpg",
           "peopleCount": 0
         }
       ]
@@ -64,7 +64,7 @@
       "snacks": [
         {
           "name": "s_noodles",
-          "image": "./bir1.jpg",
+          "image": "./img1.jpg",
           "peopleCount": 0
         }
       ]

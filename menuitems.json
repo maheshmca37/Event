@@ -66,5 +66,43 @@
            "qty": "50",
            "units": "pkts"
        }
+    ],
+    "Veg_Fried_Rice": [
+       {   "item":"white rice",
+           "qty": "5",
+           "units": "kg"
+       }
+    ],
+    "White_Rice": [
+       {   "item":"white rice",
+           "qty": "5",
+           "units": "kg"
+       }
+    ],
+    "Potato_Fry": [
+       {   "item":"potato",
+           "qty": "4",
+           "units": "kg"
+       }
+    ],
+    "Vankay_Fry": [
+       {   "item":"vankayaalu",
+           "qty": "6",
+           "units": "kg"
+       }
+    ],
+    "gulab_jam": [
+       {   "item":"gulab jam pkts",
+           "qty": "2",
+           "units": "kg pkts"
+       }
+    ],
+    "chocklate": [
+       {   "item":"chocklate ice cream",
+           "qty": "4",
+           "units": "boxes"
+       }
     ]
+    
+
 }
