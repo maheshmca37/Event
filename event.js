@@ -147,7 +147,8 @@ function showLunchItemsForm(){
             const itemDiv = document.createElement('div');
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}"+ onchange="togglePeopleCount(this, 'pc-${item.name}')"> ${item.name}
+              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
+              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
             </label>
             <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
@@ -207,7 +208,8 @@ function showLunchItemsForm(){
             const itemDiv = document.createElement('div');
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}"+ onchange="togglePeopleCount(this, 'pc-${item.name}')"> ${item.name}
+              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
+              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
             </label>
             <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
@@ -268,7 +270,8 @@ function showLunchItemsForm(){
             const itemDiv = document.createElement('div');
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}"+"_b" onchange="togglePeopleCount(this, 'pc-${item.name}')"> ${item.name}
+              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
+              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
             </label>
             <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
@@ -328,7 +331,8 @@ function showLunchItemsForm(){
             const itemDiv = document.createElement('div');
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}"+ onchange="togglePeopleCount(this, 'pc-${item.name}')"> ${item.name}
+              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
+              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
             </label>
             <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
