@@ -1,142 +1,142 @@
 [
     {
         "id": "1",
-        "name": "Basmathi_Rice(Kg)",
+        "name": "Basmathi_Rice(Kgs)",
         "qty": "0"
     },
     {
         "id": "2",
-        "name": "Chicken(kg)",
+        "name": "Chicken(kgs)",
         "qty": "0"
     },
     {
         "id": "3",
-        "name": "Allam(kg)",
+        "name": "Allam(kgs)",
         "qty": "0"
     },
     {
         "id": "4",
-        "name": "Vellulli(kg)",
+        "name": "Vellulli(kgs)",
         "qty": "0"
     },
     {
         "id": "5",
-        "name": "Oil(kg)",
+        "name": "Oil(kgs)",
         "qty": "0"
     },
     {
         "id": "6",
-        "name": "Ghee(kg)",
+        "name": "Ghee(kgs)",
         "qty": "0"
     },
     {
         "id": "7",
-        "name": "Food_Color(No)",
+        "name": "Food_Color(Nos)",
         "qty": "0"
     },
     {
         "id": "8",
-        "name": "Kaju(kg)",
+        "name": "Kaju(kgs)",
         "qty": "0"
     },
     {
         "id": "9",
-        "name": "Dasin_Chekka(kg)",
+        "name": "Dasin_Chekka(kgs)",
         "qty": "0"
     },
     {
         "id": "10",
-        "name": "Elachi(kg)",
+        "name": "Elachi(kgs)",
         "qty": "0"
     },
     {
         "id": "11",
-        "name": "Lavanga(kg)",
+        "name": "Lavanga(kgs)",
         "qty": "0"
     },
     {
         "id": "12",
-        "name": "Pacchi_Sanaga_Pappu(kg)",
+        "name": "Pacchi_Sanaga_Pappu(kgs)",
         "qty": "0"
     },
     {
         "id": "13",
-        "name": "Chintha_Pandu(kg)",
+        "name": "Chintha_Pandu(kgs)",
         "qty": "0"
     },
     {
         "id": "14",
-        "name": "pasupu(kg)",
+        "name": "pasupu(kgs)",
         "qty": "0"
     },
     {
         "id": "15",
-        "name": "Karam(kg)",
+        "name": "Karam(kgs)",
         "qty": "0"
     },
     {
         "id": "16",
-        "name": "Kallupp(kg)",
+        "name": "Kallupp(kgs)",
         "qty": "0"
     },
     {
         "id": "17",
-        "name": "Onion(kg)",
+        "name": "Onion(kgs)",
         "qty": "0"
     },
     {
         "id": "18",
-        "name": "Dhaniyala_Podi(kg)",
+        "name": "Dhaniyala_Podi(kgs)",
         "qty": "0"
     },
     {
         "id": "19",
-        "name": "ShaZeera(kg)",
+        "name": "ShaZeera(kgs)",
         "qty": "0"
     },
     {
         "id": "20",
-        "name": "Koothimeera(kg)",
+        "name": "Koothimeera(kgs)",
         "qty": "0"
     },
     {
         "id": "21",
-        "name": "Poodina(kg)",
+        "name": "Poodina(kgs)",
         "qty": "0"
     },
     {
         "id": "22",
-        "name": "Tomato(kg)",
+        "name": "Tomato(kgs)",
         "qty": "0"
     },
     {
         "id": "23",
-        "name": "Pacchi_Mirchi(kg)",
+        "name": "Pacchi_Mirchi(kgs)",
         "qty": "0"
     },
     {
         "id": "24",
-        "name": "Vankaayalu(kg)",
+        "name": "Vankaayalu(kgs)",
         "qty": "0"
     },
     {
         "id": "25",
-        "name": "NimmaKaayalu(No)",
+        "name": "NimmaKaayalu(Nos)",
         "qty": "0"
     },
     {
         "id": "26",
-        "name": "Curd(ltrs)",
+        "name": "Curd(ltr)",
         "qty": "0"
     },
     {
         "id": "27",
-        "name": "Paalu(ltrs)",
+        "name": "Paalu(ltr)",
         "qty": "0"
     },
     {
         "id": "28",
-        "name": "Mutton(kg)",
+        "name": "Mutton(kgs)",
         "qty": "0"
     }
 ]
