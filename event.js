@@ -109,6 +109,7 @@ function showLunchItemsForm(){
   lunchconfigshownstatus = '1';
   breakfasttemsContainer.style.display = 'none'; 
   dinnerItemsContainer.style.display ='none';
+  snackstemsContainer.style.display = 'none';
   lunchItemsContainer.style.display = 'block'; // Show the section
 
 }
@@ -295,20 +296,24 @@ function showLunchItemsForm(){
   }
 
   
-  async function loadsnacksMenuData() {
+  async function loadSnacksMenuData() {
     try {
+
+      if (snacksconfigshownstatus == '1') 
+          exit;
+
       const response = await fetch('menuData.json');
       const data = await response.json();
 
 
-      if (lunchItemsContainer) {
-        lunchItemsContainer.style.display = 'block'; // Show the section
+      if (snackstemsContainer) {
+        snackstemsContainer.style.display = 'block'; // Show the section
 
         // Clear any existing content
-        lunchItemsContainer.innerHTML = '';
+        //lunchItemsContainer.innerHTML = '';
 
         // Create collapsible sections for each category
-        Object.keys(data['lunch-items']).forEach(category => {
+        Object.keys(data['snacks-items']).forEach(category => {
           // Create the collapsible label
           const label = document.createElement('div');
           label.className = 'collapsible';
@@ -319,19 +324,19 @@ function showLunchItemsForm(){
           content.className = 'content';
 
           // Add items to the content
-          data['lunch-items'][category].forEach(item => {
+          data['snacks-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" onchange="togglePeopleCount(this, 'pc-${item.name.replace(/ /g, "_")}_l')"> ${item.name}
+              <input type="checkbox" id="${item.name}"+ onchange="togglePeopleCount(this, 'pc-${item.name}')"> ${item.name}
             </label>
-            <input type="number" id="pc-${item.name.replace(/ /g, "_")}_l" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+            <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
           // Append label and content to the main container
-          lunchItemsContainer.appendChild(label);
-          lunchItemsContainer.appendChild(content);
+          snackstemsContainer.appendChild(label);
+          snackstemsContainer.appendChild(content);
 
           // Add click event to toggle the content visibility
           label.addEventListener('click', function() {
@@ -343,7 +348,7 @@ function showLunchItemsForm(){
           });
         });
       } else {
-        console.error('Lunch items container not found.');
+        console.error('Snacks items container not found.');
       }
     } catch (error) {
       console.error('Error loading JSON data:', error);
@@ -362,19 +367,22 @@ function showBreakfastItemsForm(){
   breakfastconfigshownstatus = '1';
   lunchItemsContainer.style.display = 'none'; 
   dinnerItemsContainer.style.display= 'none';
+  snackstemsContainer.style.display = 'none';
   breakfasttemsContainer.style.display = 'block'; // Show the section
 }
 
 function showSnacksItemsForm(){
-  document.getElementById("lunch-items").style.display = "none";
-  document.getElementById("breakfast-items").style.display = "none";
-  document.getElementById("snack-items").style.display = "block";
-  document.getElementById("dinner-items").style.display = "none";
+  
 
-  const lbtn = document.getElementById("session-capt");
-  lbtn.style.display = 'block';
   lbtn.innerHTML="ADD ITEMS FOR SNACKS";
+  
 
+  loadSnacksMenuData();
+  snacksconfigshownstatus = '1';
+  lunchItemsContainer.style.display = 'none'; 
+  dinnerItemsContainer.style.display= 'none';
+  breakfasttemsContainer.style.display = 'none';
+  snackstemsContainer.style.display = 'block';
         
 }
 
@@ -386,6 +394,7 @@ function showDinnerItemsForm(){
   dinnerconfigshownstatus = '1';
   breakfasttemsContainer.style.display = 'none'; 
   lunchItemsContainer.style.display = 'none'; // Show the section
+  snackstemsContainer.style.display = 'none';
   dinnerItemsContainer.style.display = 'block';
 
         
@@ -530,7 +539,7 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
   const selectedItemsTableBody = [
     // Table headers for selected items
     [
-      { text: 'SNO', style: 'tableHeader' },
+      { text: 'Sno', style: 'tableHeader' },
       { text: 'Item Name', style: 'tableHeader' },
       { text: 'People Count', style: 'tableHeader' }
     ]
@@ -539,7 +548,7 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
   SelectedMenuItemsList.forEach((item, index) => {
     selectedItemsTableBody.push([
       { text: (index + 1).toString(), style: 'tableData' },
-      { text: item.iname, style: 'tableData' },
+      { text: (item.iname).toUpperCase(), style: 'tableData' },
       { text: item.pcount.toString(), style: 'tableData' }
     ]);
   });
@@ -548,8 +557,8 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
   const tableBody = [
     // Table headers for raw items
     [
-      { text: 'SNO', style: 'tableHeader' },
-      { text: 'Name', style: 'tableHeader' },
+      { text: 'Sno', style: 'tableHeader' },
+      { text: 'Material Name', style: 'tableHeader' },
       { text: 'Quantity', style: 'tableHeader' },
       { text: 'Units', style: 'tableHeader' }
     ]
@@ -564,7 +573,7 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
 
     tableBody.push([
       { text: (index + 1).toString(), style: 'tableData' },
-      { text: itemName, style: 'tableData' },
+      { text: itemName.toUpperCase(), style: 'tableData' },
       { text: updatedQty.toString(), style: 'tableData' },
       { text:updatedUnit.toString(), style: 'tableData' }
     ]);
@@ -589,7 +598,7 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
         layout: 'lightHorizontalLines' // Optional: adds horizontal lines
       },
       { text: '', margin: [0, 20] }, // Adds some space
-      { text: 'Item List', fontSize: 18, bold: true, margin: [0, 20] },
+      { text: 'Raw Item List', fontSize: 18, bold: true, margin: [0, 20] },
       {
         table: {
           headerRows: 1,

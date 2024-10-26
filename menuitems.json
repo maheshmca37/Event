@@ -55,5 +55,16 @@
             "qty": "1",
             "units":"kg"
         }
+    ],
+    "noodles": [
+       {   "item":"noodles pkts",
+           "qty": "2",
+           "units": "kg"
+       },
+       {
+           "item":"saas pkts small",
+           "qty": "50",
+           "units": "pkts"
+       }
     ]
 }
