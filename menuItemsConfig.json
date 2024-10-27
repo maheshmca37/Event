@@ -1,0 +1,93 @@
+{
+    "lunch-items": {
+      "veg-main": [
+        {
+          "icode": "100",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        },
+        {
+          "icode": "101",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        },
+        {
+          "icode": "105",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        }
+      ],
+      "veg-curries": [
+        {
+          "icode": "106",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        },
+        {
+          "icode": "107",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        }
+      ],
+      "other-items": [
+        {
+          "icode": "108",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        }
+      ],
+      "icecreams": [
+        {
+          "icode": "109",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        }
+      ],
+      "nonveg-main": [
+        {
+          "icode": "111",
+          "image": "./bir1.jpg",
+          "peopleCount": 0
+        },
+        {
+          "icode": "112",
+          "image": "./bir1.jpg",
+          "peopleCount": 0
+        }
+      ]
+    },
+    "breakfast-items": {
+      "tifins": [
+        {
+          "icode": "102",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        }
+      ]
+    },
+    "snacks-items": {
+      "snacks": [
+        {
+          "icode": "110",
+          "image": "./img1.jpg",
+          "peopleCount": 0
+        }
+      ]
+    },
+    "dinner-items": {
+      "nonveg-main": [
+        {
+          "icode": "111",
+          "image": "./bir1.jpg",
+          "peopleCount": 0
+        },
+        {
+          "icode": "112",
+          "image": "./bir1.jpg",
+          "peopleCount": 0
+        }
+      ]
+    }
+  }
+  
+

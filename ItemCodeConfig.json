@@ -1,0 +1,53 @@
+[
+    {
+        "mcode" : "100",
+        "mname" : "veg biryani"
+    },
+    {
+        "mcode" : "101",
+        "mname" : "veg fried rice"
+    },
+    {
+        "mcode" : "102",
+        "mname" : "idly"
+    },
+    {
+        "mcode" : "103",
+        "mname" : "noodles"
+    },
+    {
+        "mcode" : "105",
+        "mname" : "white rice"
+    },
+    {
+        "mcode" : "106",
+        "mname" : "potato fry"
+    },
+    {
+        "mcode" : "107",
+        "mname" : "vankay fry"
+    },
+    {
+        "mcode" : "108",
+        "mname" : "gulab jamun"
+    },
+    {
+        "mcode" : "109",
+        "mname" : "chocklate"
+    },
+    {
+        "mcode" : "110",
+        "mname" : "noodles"
+    },
+    {
+        "mcode" : "111",
+        "mname" : "chicken biryani"
+    },
+    {
+        "mcode" : "112",
+        "mname" : "mutton biryani"
+    }
+    
+
+
+]

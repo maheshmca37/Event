@@ -1,0 +1,356 @@
+{
+    
+    "111": [
+        {
+            "item" : "Basmathi Rice",
+            "qty" : 1,
+            "units" : "kg"
+        },
+        {
+            "item" : "Chicken",
+            "qty" : 1,
+            "units" : "kg"
+        },
+        {
+            "item" : "Allam",
+            "qty" : 150,
+            "units" : "gm"
+        },
+        {
+            "item" : "Vellulli",
+            "qty" : 75,
+            "units" : "gm"
+        },
+        {
+            "item" : "Oil",
+            "qty" : 250,
+            "units" : "ml"
+        },
+        {
+            "item" : "Ghee",
+            "qty" : 50,
+            "units" : "ml"
+        },
+        {
+            "item" : "Food_Color",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Kaju",
+            "qty" : 25,
+            "units" : "gm"
+        },
+        {
+            "item" : "Dasin_Chekka",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Elachi",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Lavanga",
+            "qty" : 1.25,
+            "units" : "gm"
+        },
+        {
+            "item" : "Pacchi_Sanaga_Pappu",
+            "qty" : 125,
+            "units" : "gm"
+        },
+        {
+            "item" : "Chintha_Pandu",
+            "qty" : 12.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Pasupu",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Kaaram",
+            "qty" : 12.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Kalluppu",
+            "qty" : 125,
+            "units" : "gm"
+        },
+        {
+            "item" : "Ullipayalu",
+            "qty" : 250,
+            "units" : "gm"
+        },
+        {
+            "item" : "Dhaniyala_Podi",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "ShaZeera",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Koothimeera",
+            "qty" : 0.25,
+            "units" : "kattalu"
+        },
+        {
+            "item" : "Poodina",
+            "qty" : 0.25,
+            "units" : "kattalu"
+        },
+        {
+            "item" : "Tomata",
+            "qty" : 250,
+            "units" : "gm"
+        },
+        {
+            "item" : "Pacchi_Mirchi",
+            "qty" : 12.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Vankaayalu",
+            "qty" : 50,
+            "units" : "gm"
+        },
+        {
+            "item" : "NimmaKaayalu",
+            "qty" : 0.5,
+            "units" : "kaayalu"
+        },
+        {
+            "item" : "Perugu",
+            "qty" : 500,
+            "units" : "gm"
+        },
+        {
+            "item" : "Paalu",
+            "qty" : 100,
+            "units" : "ml"
+        }
+    ],
+    "100": [
+        {
+            "item": "basmathi rice",
+            "qty": "6",
+            "units":"kg"
+        },
+        
+        {
+            "item": "oil",
+            "qty": "1.5",
+            "units":"ltrs"
+        }
+    ],
+    "102": [
+        {
+            "item": "minapappu",
+            "qty": "3",
+            "units":"kg"
+        },
+        {
+            "item": "oil",
+            "qty": "0.5",
+            "units":"ltrs"
+        },
+        {
+            "item": "onions",
+            "qty": "2",
+            "units":"kg"
+        },
+        {
+            "item": "salt",
+            "qty": "1",
+            "units":"kg"
+        }
+    ],
+    "110": [
+       {   "item":"noodles pkts",
+           "qty": "2",
+           "units": "kg"
+       },
+       {
+           "item":"saas pkts small",
+           "qty": "50",
+           "units": "pkts"
+       }
+    ],
+    "101": [
+       {   "item":"vegetables",
+           "qty": "5",
+           "units": "kg"
+       }
+    ],
+    "105": [
+       {   "item":"white rice",
+           "qty": "5",
+           "units": "kg"
+       }
+    ],
+    "106": [
+       {   "item":"potato",
+           "qty": "4",
+           "units": "kg"
+       }
+    ],
+    "107": [
+       {   "item":"vankayaalu",
+           "qty": "6",
+           "units": "kg"
+       }
+    ],
+    "108": [
+       {   "item":"gulab jam pkts",
+           "qty": "2",
+           "units": "kg pkts"
+       }
+    ],
+    "109": [
+       {   "item":"chocklate ice cream",
+           "qty": "4",
+           "units": "boxes"
+       }
+    ],
+    "112": [
+        {
+            "item" : "Basmathi Rice",
+            "qty" : 1,
+            "units" : "kg"
+        },
+        {
+            "item" : "Mutton",
+            "qty" : 1,
+            "units" : "kg"
+        },
+        {
+            "item" : "Allam",
+            "qty" : 150,
+            "units" : "gm"
+        },
+        {
+            "item" : "Vellulli",
+            "qty" : 75,
+            "units" : "gm"
+        },
+        {
+            "item" : "Oil",
+            "qty" : 250,
+            "units" : "ml"
+        },
+        {
+            "item" : "Ghee",
+            "qty" : 50,
+            "units" : "ml"
+        },
+        {
+            "item" : "Food_Color",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Kaju",
+            "qty" : 25,
+            "units" : "gm"
+        },
+        {
+            "item" : "Dasin_Chekka",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Elachi",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Lavanga",
+            "qty" : 1.25,
+            "units" : "gm"
+        },
+        {
+            "item" : "Pacchi_Sanaga_Pappu",
+            "qty" : 125,
+            "units" : "gm"
+        },
+        {
+            "item" : "Chintha_Pandu",
+            "qty" : 12.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Pasupu",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Kaaram",
+            "qty" : 12.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Kalluppu",
+            "qty" : 125,
+            "units" : "gm"
+        },
+        {
+            "item" : "Ullipayalu",
+            "qty" : 250,
+            "units" : "gm"
+        },
+        {
+            "item" : "Dhaniyala_Podi",
+            "qty" : 2.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Koothimeera",
+            "qty" : 0.25,
+            "units" : "kattalu"
+        },
+        {
+            "item" : "Poodina",
+            "qty" : 0.25,
+            "units" : "kattalu"
+        },
+        {
+            "item" : "Tomata",
+            "qty" : 250,
+            "units" : "gm"
+        },
+        {
+            "item" : "Pacchi_Mirchi",
+            "qty" : 12.5,
+            "units" : "gm"
+        },
+        {
+            "item" : "Vankaayalu",
+            "qty" : 50,
+            "units" : "gm"
+        },
+        {
+            "item" : "NimmaKaayalu",
+            "qty" : 0.5,
+            "units" : "kaayalu"
+        },
+        {
+            "item" : "Perugu",
+            "qty" : 500,
+            "units" : "gm"
+        },
+        {
+            "item" : "Paalu",
+            "qty" : 100,
+            "units" : "ml"
+        }
+    ]
+    
+
+}

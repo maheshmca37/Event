@@ -1,9 +1,9 @@
 let rawItemsListConfig = [];
 let menuItemsList = [];
-let rawItemsListforTotal = [];
+let ItemCodeConfigList = [];
 let ssnBtnsStatus = '0';
 let SelectedMenuItemsList = [];
-let peopleCount = 0;
+let defaultPplCount = 7;
 let eventdate = '';
 let eventname = '';
 let eventvenue = '';
@@ -15,8 +15,11 @@ let dinnerconfigshownstatus = '0';
 let snacksconfigshownstatus = '0';
 
 
+
+
+
 function loadRawItemsForMenuItems() {
-  fetch('./menuitems.json')
+  fetch('./rawItemsConfig.json')
     .then(res => {
       if (!res.ok) {
         throw new Error('Network response was not ok');
@@ -48,11 +51,35 @@ function loadRawItemsForMenuItems() {
       console.error('Error fetching the JSON data:', error);
     });
 }
-
-// Call the function to load and process the menu items
 loadRawItemsForMenuItems();
+loadItemCodeConfigList();
 
+//const ItemCodeConfigList = []; // Initialize the list
 
+function loadItemCodeConfigList() {
+  fetch('./ItemCodeConfig.json')
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return res.json();
+    })
+    .then(data => {
+      // Directly iterate over the array of items
+      data.forEach(item => {
+        ItemCodeConfigList.push({
+          mcode: item.mcode,
+          mname: item.mname,
+        });
+      });
+      
+      // Log the ItemCodeConfigList to verify the results
+      console.log('Item Code Config List:', ItemCodeConfigList);
+    })
+    .catch(error => {
+      console.error('Error fetching the JSON data:', error);
+    });
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
   // Get all checkboxes
@@ -115,13 +142,27 @@ function showLunchItemsForm(){
 }
 
 
+function getItemNameByIcode(Itcode){
+
+  let itName='Item Not Available';
+
+  for (let i=0; i<ItemCodeConfigList.length; i++){
+    if (ItemCodeConfigList[i].mcode == Itcode) {
+      itName = ItemCodeConfigList[i].mname;
+    }
+  }
+
+  return itName;
+
+}
+
   async function loadlunchMenuData() {
     try {
 
       if (lunchconfigshownstatus == '1') 
           exit;
 
-      const response = await fetch('menuData.json');
+      const response = await fetch('menuItemsConfig.json');
       const data = await response.json();
 
 
@@ -145,12 +186,12 @@ function showLunchItemsForm(){
           // Add items to the content
           data['lunch-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
+            const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
-              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
-            </label>
-            <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+              <input type="checkbox" id="l_${item.icode}" onchange="togglePeopleCount(this, 'pc-l_${item.icode}')">${mItemName}
+              </label>
+            <input type="number" id="pc-l_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -182,7 +223,7 @@ function showLunchItemsForm(){
       if (dinnerconfigshownstatus == '1') 
           exit;
 
-      const response = await fetch('menuData.json');
+      const response = await fetch('menuItemsConfig.json');
       const data = await response.json();
 
 
@@ -206,12 +247,12 @@ function showLunchItemsForm(){
           // Add items to the content
           data['dinner-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
+            const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
-              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
-            </label>
-            <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+              <input type="checkbox" id="d_${item.icode}" onchange="togglePeopleCount(this, 'pc-d_${item.icode}')">${mItemName}
+              </label>
+            <input type="number" id="pc-d_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -244,7 +285,7 @@ function showLunchItemsForm(){
       if (breakfastconfigshownstatus == '1') 
         exit;
 
-      const response = await fetch('menuData.json');
+      const response = await fetch('menuItemsConfig.json');
       const data = await response.json();
 
 
@@ -268,12 +309,12 @@ function showLunchItemsForm(){
           // Add items to the content
           data['breakfast-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
+            const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
-              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
-            </label>
-            <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+              <input type="checkbox" id="b_${item.icode}" onchange="togglePeopleCount(this, 'pc-b_${item.icode}')">${mItemName}
+              </label>
+            <input type="number" id="pc-b_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -305,7 +346,7 @@ function showLunchItemsForm(){
       if (snacksconfigshownstatus == '1') 
           exit;
 
-      const response = await fetch('menuData.json');
+      const response = await fetch('menuItemsConfig.json');
       const data = await response.json();
 
 
@@ -329,12 +370,12 @@ function showLunchItemsForm(){
           // Add items to the content
           data['snacks-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
+            const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
-              <input type="checkbox" id="${item.name}" onchange="togglePeopleCount(this, 'pc-${item.name}')">
-              <label for="${item.name}">${item.name.replace(/^(l_|d_|s_|b_)/, '').toUpperCase()}</label>
-            </label>
-            <input type="number" id="pc-${item.name}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+              <input type="checkbox" id="s_${item.icode}" onchange="togglePeopleCount(this, 'pc-s_${item.icode}')">${mItemName}
+              </label>
+            <input type="number" id="pc-s_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -404,6 +445,22 @@ function showDinnerItemsForm(){
         
 }
 
+function getCodename(checkboxId) {
+  // Use a regular expression to extract the numeric part of the ID
+  const match = checkboxId.match(/_(\d+)/);
+  
+  if (match) {
+      // Get the numeric code as a string and convert to number
+      const code = Number(match[1]);
+
+      // Look up the codename in the config list
+      return ItemCodeConfigList[code] || null; // Return null if not found
+  }
+
+  return null; // Return null if the format is incorrect
+}
+
+
 function setSelectedMenuItems(){
   // Use confirm to show a dialog with Yes and No options
   const userConfirmed = confirm("Please check the all Menu Items Selection \n Are you sure to Download Raw Items List?");
@@ -418,6 +475,7 @@ function setSelectedMenuItems(){
 
   checkboxes.forEach(checkbox => {
     if (checkbox.checked) {
+        //const getItemNameByIcode(checkboxId.id);
         const checkboxId = checkbox.id;
         const inputId = `pc-${checkboxId}`;
         const inputField = document.querySelector(`#${inputId}`);
@@ -471,7 +529,7 @@ function calculateItemQuantities(selectedMenuItems, menuItems) {
           if (ingredients.length > 0) {
               // Loop through the ingredients
                 for (let i=0 ; i<ingredients.length;i++){
-                  const qty = (parseFloat(ingredients[i].qty) * pcount)/50; // Multiply qty by pcount
+                  const qty = (parseFloat(ingredients[i].qty) * pcount)/defaultPplCount; // Multiply qty by pcount
                   const unit = ingredients[i].units;
                   const ingredientName = ingredients[i].item;
 
@@ -534,6 +592,33 @@ const userData = {
 
 }
 
+function processQuantityAndUnit(qty, unit) {
+  let updatedQty;
+  let updatedUnit;
+
+  if (qty < 1000) {
+      // Case 1: qty < 1000
+      updatedQty = Math.ceil(qty);
+      updatedUnit = unit; // No change to the unit
+  } else if (qty >= 1000) {
+      if (unit === 'ml') {
+          // Case 2: qty >= 1000 and unit is ml
+          updatedQty = Math.round(qty / 1000);
+          updatedUnit = 'ltr'; // Change unit to liters
+      } else if (unit === 'gm') {
+          // Case 2: qty >= 1000 and unit is gm
+          updatedQty = Math.round(qty / 1000);
+          updatedUnit = 'kg'; // Change unit to kilograms
+      } else {
+          // Case 3: qty >= 1000 and unit is not ml or gm
+          updatedQty = Math.ceil(qty);
+          updatedUnit = unit; // No change to the unit
+      }
+  }
+
+  return [updatedQty, updatedUnit]; // Return both updated values
+}
+
 
 function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
   // Prepare the content for the PDF
@@ -550,9 +635,10 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
   ];
 
   SelectedMenuItemsList.forEach((item, index) => {
+    const ImName = getItemNameByIcode(item.iname).toUpperCase();
     selectedItemsTableBody.push([
       { text: (index + 1).toString(), style: 'tableData' },
-      { text: (item.iname).toUpperCase(), style: 'tableData' },
+      { text: ImName, style: 'tableData' },
       { text: item.pcount.toString(), style: 'tableData' }
     ]);
   });
@@ -570,9 +656,11 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
 
  for (let index = 0; index < rawItemsListConfig.length; index++){
     const itemName = rawItemsListConfig[index].item;
-    const updatedQty = rawItemsListConfig[index].qty;
 
-    const updatedUnit =   rawItemsListConfig[index].unit;
+    const [updatedQty, updatedUnit] = processQuantityAndUnit(rawItemsListConfig[index].qty, rawItemsListConfig[index].unit);
+    //const updatedQty = rawItemsListConfig[index].qty;
+
+    //const updatedUnit =   rawItemsListConfig[index].unit;
 
 
     tableBody.push([
