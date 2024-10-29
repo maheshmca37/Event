@@ -255,16 +255,19 @@ function getItemNameByIcode(Itcode){
           content.className = 'content';
 
           
-          minQuantityMapList.push({
-            itemCode: item.icode,
-            itemMinQty: item.minqty,
-            itemQtyUnits: item.qtyunits
-          });
-
+      
           // Add items to the content
           data['dinner-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
             const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
+
+            minQuantityMapList.push({
+              itemCode: item.icode,
+              itemMinQty: item.minqty,
+              itemQtyUnits: item.qtyunits
+            });
+  
+
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
               <input type="checkbox" id="d_${item.icode}" onchange="togglePeopleCount(this, 'pc-d_${item.icode}')">${mItemName}
@@ -323,17 +326,19 @@ function getItemNameByIcode(Itcode){
           const content = document.createElement('div');
           content.className = 'content';
 
-          
-          minQuantityMapList.push({
-            itemCode: item.icode,
-            itemMinQty: item.minqty,
-            itemQtyUnits: item.qtyunits
-          });
-
+        
           // Add items to the content
           data['breakfast-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
             const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
+
+
+            minQuantityMapList.push({
+              itemCode: item.icode,
+              itemMinQty: item.minqty,
+              itemQtyUnits: item.qtyunits
+            });
+  
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
               <input type="checkbox" id="b_${item.icode}" onchange="togglePeopleCount(this, 'pc-b_${item.icode}')">${mItemName}
@@ -391,19 +396,20 @@ function getItemNameByIcode(Itcode){
           const content = document.createElement('div');
           content.className = 'content';
 
-          
-          minQuantityMapList.push({
-            itemCode: item.icode,
-            itemMinQty: item.minqty,
-            itemQtyUnits: item.qtyunits
-          });
-
 
 
           // Add items to the content
           data['snacks-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
             const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
+
+              
+          minQuantityMapList.push({
+            itemCode: item.icode,
+            itemMinQty: item.minqty,
+            itemQtyUnits: item.qtyunits
+          });
+
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
               <input type="checkbox" id="s_${item.icode}" onchange="togglePeopleCount(this, 'pc-s_${item.icode}')">${mItemName}
