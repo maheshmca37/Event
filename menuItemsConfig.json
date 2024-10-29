@@ -4,55 +4,68 @@
         {
           "icode": "100",
           "image": "./img1.jpg",
-          "peopleCount": 0
+          "minqty": "7",
+          "qtyunits": "people"
+         
         },
         {
           "icode": "101",
           "image": "./img1.jpg",
-          "peopleCount": 0
+          "minqty": "7",
+          "qtyunits": "people"
+          
         },
         {
           "icode": "105",
           "image": "./img1.jpg",
-          "peopleCount": 0
+          "minqty": "7",
+          "qtyunits": "people"
+       
         }
       ],
       "veg-curries": [
         {
           "icode": "106",
           "image": "./img1.jpg",
-          "peopleCount": 0
+          "minqty": "7",
+          "qtyunits": "people"
+     
         },
         {
           "icode": "107",
           "image": "./img1.jpg",
-          "peopleCount": 0
+           "minqty": "7",
+          "qtyunits": "people"
         }
       ],
       "other-items": [
         {
           "icode": "108",
           "image": "./img1.jpg",
-          "peopleCount": 0
+          "minqty": "7",
+          "qtyunits": "people"
         }
       ],
       "icecreams": [
         {
           "icode": "109",
           "image": "./img1.jpg",
-          "peopleCount": 0
+           "minqty": "7",
+          "qtyunits": "people"
         }
       ],
       "nonveg-main": [
         {
           "icode": "111",
           "image": "./bir1.jpg",
-          "peopleCount": 0
+           "minqty": "1",
+          "qtyunits": "kg"
         },
         {
           "icode": "112",
           "image": "./bir1.jpg",
-          "peopleCount": 0
+          "minqty": "1",
+          "qtyunits": "kg"
         }
       ]
     },
@@ -61,7 +74,8 @@
         {
           "icode": "102",
           "image": "./img1.jpg",
-          "peopleCount": 0
+           "minqty": "7",
+          "qtyunits": "people"
         }
       ]
     },
@@ -70,7 +84,8 @@
         {
           "icode": "110",
           "image": "./img1.jpg",
-          "peopleCount": 0
+           "minqty": "7",
+          "qtyunits": "people"
         }
       ]
     },
@@ -79,11 +94,15 @@
         {
           "icode": "111",
           "image": "./bir1.jpg",
+          "minqty": "1",
+          "qtyunits": "kg",
           "peopleCount": 0
         },
         {
           "icode": "112",
           "image": "./bir1.jpg",
+          "minqty": "1",
+          "qtyunits": "kg",
           "peopleCount": 0
         }
       ]

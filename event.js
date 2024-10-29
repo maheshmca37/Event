@@ -3,6 +3,7 @@ let menuItemsList = [];
 let ItemCodeConfigList = [];
 let ssnBtnsStatus = '0';
 let SelectedMenuItemsList = [];
+let minQuantityMapList = [];
 let defaultPplCount = 7;
 let eventdate = '';
 let eventname = '';
@@ -187,11 +188,20 @@ function getItemNameByIcode(Itcode){
           data['lunch-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
             const mItemName = (getItemNameByIcode(item.icode)).toUpperCase();
+            
+
+            minQuantityMapList.push({
+              itemCode: item.icode,
+              itemMinQty: item.minqty,
+              itemQtyUnits: item.qtyunits
+            });
+           // const plchldr = item.qtyunits;
+
             itemDiv.innerHTML = `<label>
               <img src="${item.image}" class="item-image">
               <input type="checkbox" id="l_${item.icode}" onchange="togglePeopleCount(this, 'pc-l_${item.icode}')">${mItemName}
               </label>
-            <input type="number" id="pc-l_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+            <input type="number" id="pc-l_${item.icode}" placeholder="${item.qtyunits}" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -244,6 +254,13 @@ function getItemNameByIcode(Itcode){
           const content = document.createElement('div');
           content.className = 'content';
 
+          
+          minQuantityMapList.push({
+            itemCode: item.icode,
+            itemMinQty: item.minqty,
+            itemQtyUnits: item.qtyunits
+          });
+
           // Add items to the content
           data['dinner-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
@@ -252,7 +269,7 @@ function getItemNameByIcode(Itcode){
               <img src="${item.image}" class="item-image">
               <input type="checkbox" id="d_${item.icode}" onchange="togglePeopleCount(this, 'pc-d_${item.icode}')">${mItemName}
               </label>
-            <input type="number" id="pc-d_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+            <input type="number" id="pc-d_${item.icode}" placeholder="${item.qtyunits}"  style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -306,6 +323,13 @@ function getItemNameByIcode(Itcode){
           const content = document.createElement('div');
           content.className = 'content';
 
+          
+          minQuantityMapList.push({
+            itemCode: item.icode,
+            itemMinQty: item.minqty,
+            itemQtyUnits: item.qtyunits
+          });
+
           // Add items to the content
           data['breakfast-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
@@ -314,7 +338,7 @@ function getItemNameByIcode(Itcode){
               <img src="${item.image}" class="item-image">
               <input type="checkbox" id="b_${item.icode}" onchange="togglePeopleCount(this, 'pc-b_${item.icode}')">${mItemName}
               </label>
-            <input type="number" id="pc-b_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+            <input type="number" id="pc-b_${item.icode}" placeholder="${item.qtyunits}" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -367,6 +391,15 @@ function getItemNameByIcode(Itcode){
           const content = document.createElement('div');
           content.className = 'content';
 
+          
+          minQuantityMapList.push({
+            itemCode: item.icode,
+            itemMinQty: item.minqty,
+            itemQtyUnits: item.qtyunits
+          });
+
+
+
           // Add items to the content
           data['snacks-items'][category].forEach(item => {
             const itemDiv = document.createElement('div');
@@ -375,7 +408,7 @@ function getItemNameByIcode(Itcode){
               <img src="${item.image}" class="item-image">
               <input type="checkbox" id="s_${item.icode}" onchange="togglePeopleCount(this, 'pc-s_${item.icode}')">${mItemName}
               </label>
-            <input type="number" id="pc-s_${item.icode}" placeholder="No. of people" style="width: 50px;"> <br><br>`;
+            <input type="number" id="pc-s_${item.icode}" placeholder="${item.qtyunits}" style="width: 50px;"> <br><br>`;
             content.appendChild(itemDiv);
           });
 
@@ -445,20 +478,6 @@ function showDinnerItemsForm(){
         
 }
 
-function getCodename(checkboxId) {
-  // Use a regular expression to extract the numeric part of the ID
-  const match = checkboxId.match(/_(\d+)/);
-  
-  if (match) {
-      // Get the numeric code as a string and convert to number
-      const code = Number(match[1]);
-
-      // Look up the codename in the config list
-      return ItemCodeConfigList[code] || null; // Return null if not found
-  }
-
-  return null; // Return null if the format is incorrect
-}
 
 
 function setSelectedMenuItems(){
@@ -506,6 +525,16 @@ const SelectedMenuItemsList = Array.from(itemMap, ([iname, pcount]) => ({ iname,
 }
 
 
+function getConfiureCountByMenuItemID(micode){
+
+  for (let i=0; i<minQuantityMapList.length; i++){
+    if(micode == minQuantityMapList[i].itemCode){
+      return  minQuantityMapList[i].itemMinQty;
+    }
+  }
+
+}
+
 function calculateItemQuantities(selectedMenuItems, menuItems) {
   const itemSummary = {};
 
@@ -525,11 +554,15 @@ function calculateItemQuantities(selectedMenuItems, menuItems) {
         }
       }
 
+      // This call sets minimum quantity of each individual menu item i,e item related people count or kgs
+      configuredCount = getConfiureCountByMenuItemID(itemName);
+
+
           // Ensure ingredients is an array and has items
           if (ingredients.length > 0) {
               // Loop through the ingredients
                 for (let i=0 ; i<ingredients.length;i++){
-                  const qty = (parseFloat(ingredients[i].qty) * pcount)/defaultPplCount; // Multiply qty by pcount
+                  const qty = (parseFloat(ingredients[i].qty) * pcount)/configuredCount; // Multiply qty by pcount
                   const unit = ingredients[i].units;
                   const ingredientName = ingredients[i].item;
 
@@ -619,6 +652,14 @@ function processQuantityAndUnit(qty, unit) {
   return [updatedQty, updatedUnit]; // Return both updated values
 }
 
+function getConfiguredMenuItemQtyUnitsByID(mitemID){
+  for (let i=0; i<minQuantityMapList.length; i++){
+    if(mitemID == minQuantityMapList[i].itemCode){
+      return minQuantityMapList[i].itemQtyUnits;
+    }
+  }
+}
+
 
 function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
   // Prepare the content for the PDF
@@ -630,16 +671,18 @@ function generatePDF(rawItemsListConfig, SelectedMenuItemsList) {
     [
       { text: 'Sno', style: 'tableHeader' },
       { text: 'Item Name', style: 'tableHeader' },
-      { text: 'People Count', style: 'tableHeader' }
+      { text: 'People Count/Quantity', style: 'tableHeader' }
     ]
   ];
 
   SelectedMenuItemsList.forEach((item, index) => {
     const ImName = getItemNameByIcode(item.iname).toUpperCase();
+    const itemQtyType = getConfiguredMenuItemQtyUnitsByID(item.iname);
+
     selectedItemsTableBody.push([
       { text: (index + 1).toString(), style: 'tableData' },
       { text: ImName, style: 'tableData' },
-      { text: item.pcount.toString(), style: 'tableData' }
+      { text: item.pcount.toString()+"---"+itemQtyType, style: 'tableData' }
     ]);
   });
 
@@ -742,7 +785,11 @@ function togglePeopleCount(checkbox, inputId) {
   const peopleCount = document.getElementById('total-people-count').value;
 
   if (checkbox.checked) {
+     if(input.placeholder == 'kg'){
+      input.value = 1;
+     }else {
       input.value = peopleCount; // Set input value to peopleCount if checked
+     }
   } else {
       input.value = 0; // Reset input value to 0 if unchecked
   }
