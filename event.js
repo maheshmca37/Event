@@ -642,11 +642,16 @@ function processQuantityAndUnit(qty, unit) {
   } else if (qty >= 1000) {
       if (unit === 'ml') {
           // Case 2: qty >= 1000 and unit is ml
-          updatedQty = Math.round(qty / 1000);
+          //updatedQty = Math.round(qty / 1000);
+         updatedQty = Math.ceil((qty / 1000) * 100) / 100; // Ceil the value to two decimal places
+         updatedQty = Math.ceil(updatedQty); 
           updatedUnit = 'ltr'; // Change unit to liters
       } else if (unit === 'gm') {
           // Case 2: qty >= 1000 and unit is gm
-          updatedQty = Math.round(qty / 1000);
+         // updatedQty = Math.round(qty / 1000);
+         updatedQty = Math.ceil((qty / 1000) * 100) / 100; // Ceil the value to two decimal places
+         updatedQty = Math.ceil(updatedQty); 
+         
           updatedUnit = 'kg'; // Change unit to kilograms
       } else {
           // Case 3: qty >= 1000 and unit is not ml or gm
